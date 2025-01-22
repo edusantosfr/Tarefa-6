@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Lista de Tarefas</title>
 </head>
+
 <body>
     <div class="container">
         <div id="menu">
             <div class="logo">
                 <img src="assets/logo.png" alt="logo">
-                <h1>Lista de 
-                    <br>
-                    Tarefas</h1>
+                <h1>Lista de <br> Tarefas</h1>
             </div>
             <div class="category">
                 <div>
-                    <img class="icon" src="assets/house.png" alt="logo de uma casa">
+                    <img class="icon" src="assets/house.png" alt="icone de uma casa">
                     <a href="">Casa</a>
                 </div>
                 <div>
-                    <img class="icon" src="assets/work.png" alt="logo de uma pasta">
+                    <img class="icon" src="assets/work.png" alt="icone de uma pasta">
                     <a href="">Trabalho</a>
                 </div>
                 <div>
-                    <img class="icon" src="assets/school.png" alt="logo de livros">
+                    <img class="icon" src="assets/school.png" alt="icone de livros">
                     <a href="">Escola</a>
                 </div>
                 <div>
-                    <img class="icon" src="assets/event.png" alt="logo de um calendario">
+                    <img class="icon" src="assets/event.png" alt="icone de um calendario">
                     <a href="">Evento</a>
                 </div>
             </div>
@@ -40,12 +40,51 @@
             </footer>
         </div>
         <div id="navigation">
-            
+            <input type="text" name="search" id="search" placeholder="Procure uma Tarefa...">
+            <button type="submit">
+                <img src="assets/add.png" alt="botão de adicionar">
+            </button>
         </div>
         <div id="tasks">
-
+            <div class="hide" id="insert-container">
+                <form id="insert-task">
+                    <h3>Insira os dados <br> da sua tarefa</h3>
+                    <p>Nome:</p>
+                    <input type="text" id="name" placeholder="Tarefa...">
+                    <p>Data de Criação:</p>
+                    <input type="date" id="date">
+                    <div class="button-container">
+                        <button id="cancel">Cancelar</button>
+                        <button id="ready" type="submit">Pronto</button>
+                    </div>
+                </form>
+            </div>
+            <div class="list">
+                <div class="task">
+                    <h2>Tarefa 1</h2>
+                    <p>Data de Criação</p>
+                    <button class="finish">
+                        <img src="assets/confirmed.png" alt="icone de confirmado">
+                    </button>
+                </div>
+                <div class="task">
+                    <h2>Tarefa 1</h2>
+                    <p>Data de Criação</p>
+                    <button class="finish">
+                        <img src="assets/confirmed.png" alt="icone de confirmado">
+                    </button>
+                </div>
+                <div class="task">
+                    <h2>Tarefa 1</h2>
+                    <p>Data de Criação</p>
+                    <button class="finish">
+                        <img src="assets/confirmed.png" alt="icone de confirmado">
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
     <script src="main.js"></script>
 </body>
+
 </html>

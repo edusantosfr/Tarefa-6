@@ -20,7 +20,7 @@
 .container {
     display: grid;
     grid-template-columns: 400px 1fr;
-    grid-template-rows: 200px 1fr;
+    grid-template-rows: 160px 1fr;
     height: 100vh;
 
     grid-template-areas:
@@ -28,6 +28,8 @@
         "menu tasks"
     ;
 }
+
+/* MENU */
 
 #menu {
     grid-area: menu;
@@ -98,12 +100,147 @@
     font-size: 20px;
 }
 
+/* NAVIGATION */
+
 #navigation {
     grid-area: navigation;
     background-color: var(--body-color);
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
 }
+
+#navigation input {
+    width: 70%;
+    height: 4rem;
+    margin-left: 3.3rem;
+    border: none;
+    border-radius: 20px;
+
+    padding-left: 25px;
+    font-size: 25px;
+}
+
+#search {
+    display: flex;
+    flex-direction: column;
+}
+
+#navigation button {
+    width: 4.2rem;
+    height: 4.2rem;
+    margin-right: 3.3rem;
+    border: none;
+    cursor: pointer;
+    background-color: var(--body-color);
+}
+
+#navigation img {
+    width: 4rem;
+    height: 4rem;
+}
+
+/* TASKS */
 
 #tasks {
     grid-area: tasks;
     background-color: var(--body-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    pointer-events: none;
+}
+
+.list {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+}
+
+.finish {
+    width: 3.3rem;
+    height: 3.3rem;
+}
+
+.finish img{
+    width: 3rem;
+    height: 3rem;
+}
+
+/* INSERT MENU */
+
+.hide {
+    display: none; 
+}
+
+#insert-container {
+    margin-right: 400px;
+    margin-bottom: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 500px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+}
+
+#insert-task {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+#insert-task h3 {
+    font-family: var(--title-font-family);
+    padding-bottom: 30px;
+    font-size: 35px;
+    text-align: center;
+}
+
+#insert-task p {
+    margin-left: 15px;
+    font-size: 20px;
+}
+
+#insert-task input {
+    color: var(--text-color);
+    font-size: 20px;
+    padding: 15px;
+    width: 500px;
+    margin-bottom: 30px;
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-container button {
+    height: 50px;
+    width: 160px;
+    border: none;
+    border-radius: 7px;
+    font-size: 20px;
+}
+
+.button-container #cancel {
+    background-color: rgb(212, 127, 127);
+    color: white;
+}
+
+.button-container #ready {
+    background-color: rgb(120, 228, 129);
+    color: white;
 }

@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Quicksand:wght@300..700&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-color: rgb(228, 228, 228);
+    --text-color: rgb(122, 122, 122);
+    font-family: "Quicksand", serif;
+    --title-font-family: "Silkscreen", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    grid-template-rows: 200px 1fr;
+    height: 100vh;
+
+    grid-template-areas:
+        "menu navigation"
+        "menu tasks"
+    ;
+}
+
+#menu {
+    grid-area: menu;
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    padding-top: 40px;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+
+    font-family: var(--title-font-family);
+    color: rgb(87, 87, 87);
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.logo img {
+    height: 70px;
+    width: 70px;
+    margin-right: 20px;
+}
+
+.category {
+    margin-bottom: 120px;
+}
+
+.category div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+
+    font-size: 1.4rem;
+    font-weight: 900;
+}
+
+
+.icon {
+    height: 25px;
+    width: 25px;
+}
+
+.category a {
+    padding: 20px;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+#footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+#footer a {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+#navigation {
+    grid-area: navigation;
+    background-color: var(--body-color);
+}
+
+#tasks {
+    grid-area: tasks;
+    background-color: var(--body-color);
+}

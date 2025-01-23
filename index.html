@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt BR">
 
 <head>
     <meta charset="UTF-8">
@@ -40,7 +40,7 @@
             </footer>
         </div>
         <div id="navigation">
-            <input type="text" name="search" id="search" placeholder="Procure uma Tarefa...">
+            <input type="text" name="search-bar" id="search-bar" placeholder="Procure uma Tarefa...">
             <button type="submit">
                 <img src="assets/add.png" alt="botão de adicionar">
             </button>
@@ -50,32 +50,38 @@
                 <form id="insert-task">
                     <h3>Insira os dados <br> da sua tarefa</h3>
                     <p>Nome:</p>
-                    <input type="text" id="name" placeholder="Tarefa...">
+                    <input type="text" id="name-input" placeholder="Tarefa...">
                     <p>Data de Criação:</p>
-                    <input type="date" id="date">
+                    <input type="date" id="date-input">
                     <div class="button-container">
-                        <button id="cancel">Cancelar</button>
+                        <button id="cancel" type="reset">Cancelar</button>
                         <button id="ready" type="submit">Pronto</button>
                     </div>
                 </form>
             </div>
-            <div class="list">
+            <div id="list">
                 <div class="task">
-                    <h2>Tarefa 1</h2>
+                    <div class="task-title">
+                        <h2>Tarefa 1</h2>
+                    </div>
                     <p>Data de Criação</p>
                     <button class="finish">
                         <img src="assets/confirmed.png" alt="icone de confirmado">
                     </button>
                 </div>
                 <div class="task">
-                    <h2>Tarefa 1</h2>
+                    <div class="task-title">
+                        <h2>Colocar o lixo para fora</h2>
+                    </div>
                     <p>Data de Criação</p>
                     <button class="finish">
                         <img src="assets/confirmed.png" alt="icone de confirmado">
                     </button>
                 </div>
-                <div class="task">
-                    <h2>Tarefa 1</h2>
+                <div class="task done">
+                    <div class="task-title">
+                        <h2>Fazer a tarefa de matemática para estudar para a prova</h2>
+                    </div>
                     <p>Data de Criação</p>
                     <button class="finish">
                         <img src="assets/confirmed.png" alt="icone de confirmado">

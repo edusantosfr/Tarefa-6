@@ -156,7 +156,7 @@ img {
     pointer-events: none;
 }
 
-.list {
+#list {
     display: flex;
     flex-direction: column;
     width: 70%;
@@ -208,23 +208,21 @@ img {
     text-decoration: line-through;
 }
 
-.done img {
-    display: none;
-}
+
 
 .done button {
-    display: none;
+    background: gray;
 }
 
 /* INSERT MENU */
 
 .hide {
-    display: none ; 
+    display: none !important; 
 }
 
 #insert-container {
-    margin-left: 300px;
-    margin-bottom: 100px;
+    margin-left: 450px;
+    margin-top: 100px;
     display: flex;
     align-items: center;
     justify-content: center;

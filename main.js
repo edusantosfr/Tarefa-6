@@ -1,9 +1,11 @@
 const searchBar = document.querySelector("#search-bar");
 
 const taskList = document.querySelector("#list");
-const insertTask = document.querySelector("#insert-task");
+const insertTask = document.querySelector("#insert-container");
 const taskName = document.querySelector("#name-input");
 const taskDate = document.querySelector("#date-input");
+
+const naviBar = document.querySelector("#navigation");
 
 const saveTask = (text, date) => {
 
@@ -33,6 +35,14 @@ const saveTask = (text, date) => {
     doneButton.appendChild(doneButtonImage)
 
     taskList.appendChild(task)
+
+    taskName.value = ""
+    taskDate.value = ""
+}
+
+const toggleForms = () => {
+    insertTask.classList.toggle("hide")
+    taskList.classList.toggle("hide")
 }
 
 insertTask.addEventListener("submit", (e) => {
@@ -44,7 +54,27 @@ insertTask.addEventListener("submit", (e) => {
     if (inputNameValue && inputDateValue) {
         saveTask(inputNameValue, inputDateValue)
     }
+    toggleForms()
 });
 
+const submitTask = document.querySelector("#submitTask");
+
+document.addEventListener("click", (e) => {
+    const targetElement = e.target
+    const parentElement = targetElement.closest("div")
+
+    if(targetElement.classList.contains("finish")) {
+        parentElement.classList.toggle("done")
+    }
+    if(targetElement.classList.contains("submitTask")) {
+        toggleForms()
+    }
+})
+
 const cancelButton = document.querySelector("#cancel");
-const readyButton = document.querySelector("#ready");
+
+cancelButton.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    toggleForms()
+})

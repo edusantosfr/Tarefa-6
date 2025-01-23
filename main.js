@@ -9,13 +9,13 @@ const naviBar = document.querySelector("#navigation");
 
 const saveTask = (text, date) => {
 
-    const task = document.createElement("div") 
+    const task = document.createElement("div")
     task.classList.add("task")
 
     const divTaskTitle = document.createElement("div")
     divTaskTitle.classList.add("task-title")
     task.appendChild(divTaskTitle)
-    
+
     const taskTitle = document.createElement("h2")
     taskTitle.innerText = text
     divTaskTitle.appendChild(taskTitle)
@@ -63,10 +63,16 @@ document.addEventListener("click", (e) => {
     const targetElement = e.target
     const parentElement = targetElement.closest("div")
 
-    if(targetElement.classList.contains("finish")) {
+    let taskTitle;
+
+    if (parentElement && parentElement.querySelector("h2")) {
+        taskTitle = parentElement.querySelector("h2").innerText
+    }
+
+    if (targetElement.classList.contains("finish")) {
         parentElement.classList.toggle("done")
     }
-    if(targetElement.classList.contains("submitTask")) {
+    if (targetElement.classList.contains("submitTask")) {
         toggleForms()
     }
 })
@@ -78,3 +84,25 @@ cancelButton.addEventListener("click", (e) => {
 
     toggleForms()
 })
+
+const getSearchedTodos = (search) => {
+    const all = document.querySelectorAll(".task");
+
+    all.forEach((task) => {
+        const taskTitle = task.querySelector("h2").innerText.toLowerCase();
+
+        task.style.display = "flex";
+
+        console.log(taskTitle);
+
+        if (!taskTitle.includes(search)) {
+            task.style.display = "none";
+        }
+    });
+};
+
+searchBar.addEventListener("keyup", (e) => {
+    const search = e.target.value;
+
+    getSearchedTodos(search);
+});

@@ -10,6 +10,10 @@ const taskDate = document.querySelector("#date-input");
 const naviBar = document.querySelector("#navigation");
 
 const saveTask = (text, date) => {
+    let taskObject = {
+        taskNameObj: text,
+        taskDateObj: date
+    }
 
     const task = document.createElement("div")
     task.classList.add("task")
@@ -19,11 +23,11 @@ const saveTask = (text, date) => {
     task.appendChild(divTaskTitle)
 
     const taskTitle = document.createElement("h2")
-    taskTitle.innerText = text
+    taskTitle.innerText = taskObject.taskNameObj
     divTaskTitle.appendChild(taskTitle)
 
     const taskCreation = document.createElement("p")
-    taskCreation.innerText = date
+    taskCreation.innerText = taskObject.taskDateObj
     task.appendChild(taskCreation)
 
     const doneButton = document.createElement("button")

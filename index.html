@@ -53,6 +53,13 @@
                     <input type="text" id="name-input" placeholder="Tarefa...">
                     <p>Data de Criação:</p>
                     <input type="date" id="date-input">
+                    <p>Tipo de Tarefa:</p>
+                    <select name="filter"> 
+                        <option value="house">Casa</option>
+                        <option value="work">Trabalho</option>
+                        <option value="school">Escola</option>
+                        <option value="event">Evento</option>
+                    </select>
                     <div class="button-container">
                         <button id="cancel" type="reset">Cancelar</button>
                         <button id="ready" type="submit">Pronto</button>
@@ -60,27 +67,21 @@
                 </form>
             </div>
             <div id="list">
+                <div id="house">
+
+                </div>
+                <div id="work">
+                    
+                </div>
+                <div id="school">
+                    
+                </div>
+                <div id="event">
+                    
+                </div>
                 <div class="task">
                     <div class="task-title">
                         <h2>Tarefa 1</h2>
-                    </div>
-                    <p>Data de Criação</p>
-                    <button class="finish">
-                        <img src="assets/confirmed.png" alt="icone de confirmado">
-                    </button>
-                </div>
-                <div class="task">
-                    <div class="task-title">
-                        <h2>Colocar o lixo para fora</h2>
-                    </div>
-                    <p>Data de Criação</p>
-                    <button class="finish">
-                        <img src="assets/confirmed.png" alt="icone de confirmado">
-                    </button>
-                </div>
-                <div class="task done">
-                    <div class="task-title">
-                        <h2>Fazer a tarefa de matemática para estudar para a prova</h2>
                     </div>
                     <p>Data de Criação</p>
                     <button class="finish">

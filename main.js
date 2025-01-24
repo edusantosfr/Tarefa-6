@@ -6,13 +6,23 @@ const taskList = document.querySelector("#list");
 const insertTask = document.querySelector("#insert-container");
 const taskName = document.querySelector("#name-input");
 const taskDate = document.querySelector("#date-input");
+const filterTask = document.querySelector(".filter");
+
+const filterHouse = document.querySelector("#house");
+const filterWork = document.querySelector("#work");
+const filterSchool = document.querySelector("#school");
+const filterEvent = document.querySelector("#event");
 
 const naviBar = document.querySelector("#navigation");
 
-const saveTask = (text, date) => {
+const pendingButton = document.querySelector("#pending");
+
+const saveTask = (text, date, filter) => {
+
     let taskObject = {
         taskNameObj: text,
-        taskDateObj: date
+        taskDateObj: date,
+        taskFilterObj: filter
     }
 
     const task = document.createElement("div")
@@ -40,8 +50,16 @@ const saveTask = (text, date) => {
     doneButtonImage.async = true
     doneButton.appendChild(doneButtonImage)
 
-    taskList.appendChild(task)
-
+    if (taskObject.taskFilterObj == "house") {
+        filterHouse.appendChild(task)
+    } else if (taskObject.taskFilterObj == "work") {
+        filterWork.appendChild(task)
+    } else if (taskObject.taskFilterObj == "school") {
+        filterSchool.appendChild(task)
+    } else if (taskObject.taskFilterObj == "event") {
+        filterEvent.appendChild(task)
+    }
+    
     taskName.value = ""
     taskDate.value = ""
 }
@@ -51,14 +69,29 @@ const toggleForms = () => {
     taskList.classList.toggle("hide")
 }
 
+pendingButton.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    console.log('a')
+    const all = document.querySelectorAll(".task");
+
+    all.forEach((task) => {
+
+        if (task.classList.contains("done")) {
+            task.classList.toggle("hide")
+        }
+    });
+})
+
 insertTask.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const inputNameValue = taskName.value
     const inputDateValue = taskDate.value
+    const inputFilterValue = filterTask.value
 
-    if (inputNameValue && inputDateValue) {
-        saveTask(inputNameValue, inputDateValue)
+    if (inputNameValue && inputDateValue && inputFilterValue) {
+        saveTask(inputNameValue, inputDateValue, inputFilterValue)
     }
     toggleForms()
 });
@@ -68,8 +101,6 @@ const submitTask = document.querySelector("#submitTask");
 document.addEventListener("click", (e) => {
     const targetElement = e.target
     const parentElement = targetElement.closest("div")
-
-    let taskTitle;
 
     if (parentElement && parentElement.querySelector("h2")) {
         taskTitle = parentElement.querySelector("h2").innerText

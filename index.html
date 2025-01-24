@@ -17,20 +17,23 @@
             </div>
             <div class="category">
                 <div>
+                    <button id="pending">Tarefas Pendentes</button>
+                </div>
+                <div>
                     <img class="icon" src="assets/house.png" alt="icone de uma casa">
-                    <a href="">Casa</a>
+                    <a href="#house">Casa</a>
                 </div>
                 <div>
                     <img class="icon" src="assets/work.png" alt="icone de uma pasta">
-                    <a href="">Trabalho</a>
+                    <a href="#work">Trabalho</a>
                 </div>
                 <div>
                     <img class="icon" src="assets/school.png" alt="icone de livros">
-                    <a href="">Escola</a>
+                    <a href="#school">Escola</a>
                 </div>
                 <div>
                     <img class="icon" src="assets/event.png" alt="icone de um calendario">
-                    <a href="">Evento</a>
+                    <a href="#event">Evento</a>
                 </div>
             </div>
             <footer id="footer">
@@ -50,11 +53,11 @@
                 <form id="insert-task">
                     <h3>Insira os dados <br> da sua tarefa</h3>
                     <p>Nome:</p>
-                    <input type="text" id="name-input" placeholder="Tarefa...">
+                    <input type="text" id="name-input" placeholder="Tarefa..." required>
                     <p>Data de Criação:</p>
-                    <input type="date" id="date-input">
+                    <input type="date" id="date-input" required>
                     <p>Tipo de Tarefa:</p>
-                    <select name="filter"> 
+                    <select name="filter" class="filter" required> 
                         <option value="house">Casa</option>
                         <option value="work">Trabalho</option>
                         <option value="school">Escola</option>
@@ -68,25 +71,37 @@
             </div>
             <div id="list">
                 <div id="house">
+                    <div class="filterTitle">
+                        <h2>Casa</h2>
+                    </div>
+                    <div class="task">
+                        <div class="task-title">
+                            <h2>Nome da Tarefa</h2>
+                        </div>
+                        <p>Data de Criação</p>
+                        <button class="finish">
+                            <img src="assets/confirmed.png" alt="icone de confirmado">
+                        </button>
+                    </div>
 
                 </div>
                 <div id="work">
+                    <div class="filterTitle">
+                        <h2>Trabalho</h2>
+                    </div>
                     
                 </div>
                 <div id="school">
+                    <div class="filterTitle">
+                        <h2>Escola</h2>
+                    </div>
                     
                 </div>
                 <div id="event">
-                    
-                </div>
-                <div class="task">
-                    <div class="task-title">
-                        <h2>Tarefa 1</h2>
+                    <div class="filterTitle">
+                        <h2>Evento</h2>
                     </div>
-                    <p>Data de Criação</p>
-                    <button class="finish">
-                        <img src="assets/confirmed.png" alt="icone de confirmado">
-                    </button>
+                    
                 </div>
             </div>
         </div>

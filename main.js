@@ -1,5 +1,7 @@
 const searchBar = document.querySelector("#search-bar");
 
+const completedTask = document.querySelector("#completed");
+
 const taskList = document.querySelector("#list");
 const insertTask = document.querySelector("#insert-container");
 const taskName = document.querySelector("#name-input");
